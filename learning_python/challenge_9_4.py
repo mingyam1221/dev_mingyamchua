@@ -28,9 +28,17 @@ def mean(data):
 
 def median(data):
     """Calculate median of a list."""
-    data
-    result = (max(data) + min(data)) / 2
+    data.sort()
+    result = data[round(len(data) / 2)]     # not the most properway
     return result
 
-print(mean(enrollment))
-print(median(enrollment))
+print("******************************")
+print(f"Total students:    {sum(enrollment):,}")
+print(f"Total tuition:   $ {sum(fees):,.2f}")
+print("\n")
+print(f"Student mean:      {mean(enrollment):,.2f}")
+print(f"Student median:    {median(enrollment):,.2f}")
+print("\n")
+print(f"Tuition mean:    $ {mean(fees):,.2f}")
+print(f"Tuition median:  $ {median(fees):,.2f}")
+print("****************************")
